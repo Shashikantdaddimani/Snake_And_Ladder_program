@@ -3,7 +3,7 @@ package com.java.snakeandladder;
 import java.util.Random;
 
 /**
- * The Player rolls the die to get a number Between 1 to 6.
+ * The Player then checks for a Option They are No Play,Ladder and Snake
  */
 
 public class SnakeAndLadder {
@@ -17,6 +17,24 @@ public class SnakeAndLadder {
 		
 		int dice = Ra.nextInt(6) + 1 ;
 		System.out.println("Dice Rolled: "+dice);
+		
+		int option = Ra.nextInt(3);
+		switch(option)
+		{
+		case 0: System.out.println("No Play!!");
+				break;
+		case 1: System.out.println("Ladder!");
+				userPosition = userPosition + dice;
+				
+				break;
+		default: System.out.println("Snake!");
+				userPosition = userPosition - dice;
+				
+				if(userPosition<0)
+				{ userPosition = 0; 
+				}
+		}
+		System.out.println("Presnt Position of the User: "+userPosition);
 	}
 
 }
